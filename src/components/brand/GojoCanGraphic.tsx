@@ -107,7 +107,7 @@ export function GojoCanGraphic({
         <rect x="20" y="45" width="160" height="290" rx="14" fill={`url(#canBodyGrad-${flavour})`} />
 
         {/* Metallic Specular Highlight Overlay */}
-        <rect x="20" y="45" width="160" height="290" rx="14" fill={`url(#canShine-${flavour})`} mixBlendMode="overlay" />
+        <rect x="20" y="45" width="160" height="290" rx="14" fill={`url(#canShine-${flavour})`} style={{ mixBlendMode: 'overlay' }} />
 
         {/* Can Bottom Rim Metal */}
         <path d="M 24 330 L 36 355 L 164 355 L 176 330 Z" fill="#64748B" />
