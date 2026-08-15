@@ -1,0 +1,318 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// ----------------------------------------------------
+// 1. ECOSYSTEM & DIVISIONS
+// ----------------------------------------------------
+
+enum PillarType {
+  BIOHEED_PHARMACEUTICAL
+  GOJO_NUTRITION
+  GOJOME_TECHNOLOGY
+  GOJO_INNOVATION_CORP
+}
+
+model EcosystemPillar {
+  id          String      @id @default(cuid())
+  name        String
+  type        PillarType  @unique
+  tagline     String
+  description String
+  division    String
+  primaryColor String
+  badgeText   String
+  routePath   String
+  sortOrder   Int         @default(0)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+// ----------------------------------------------------
+// 2. PRODUCTS & NUTRITIONAL ARCHITECTURE
+// ----------------------------------------------------
+
+enum ProductStatus {
+  CURRENT
+  IN_DEVELOPMENT
+  FUTURE_R_AND_D
+  ARCHIVED
+}
+
+model Product {
+  id              String           @id @default(cuid())
+  slug            String           @unique
+  name            String
+  brand           String           // e.g. "GOJO", "Bioheed"
+  tagline         String
+  description     String
+  format          String           // e.g. "200 ml can", "Liquid formulation"
+  status          ProductStatus    @default(CURRENT)
+  category        String           // "Nutritional Beverage", "Functional Nutrition", etc.
+  heroImage       String?
+  badgeText       String?          // e.g. "Flagship Beverage"
+  keyHighlights   String[]         // e.g. ["Rich in Protein", "Rich in Calcium", "Millet Goodness"]
+  isFeatured      Boolean          @default(false)
+  sortOrder       Int              @default(0)
+  
+  // Relations
+  flavours        Flavour[]
+  nutritionalFacts NutritionalFact[]
+  
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+}
+
+model Flavour {
+  id          String   @id @default(cuid())
+  productId   String
+  product     Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  name        String   // "Vanilla", "Chocolate", "Coffee"
+  colorHex    String   // visual theme for can/badge
+  description String
+  image       String?
+  isDefault   Boolean  @default(false)
+  sortOrder   Int      @default(0)
+}
+
+model NutritionalFact {
+  id          String   @id @default(cuid())
+  productId   String
+  product     Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  nutrient    String   // "Protein", "Calcium", "Energy", etc.
+  amount      String   // e.g. "15g", "300mg"
+  dvPercent   String?  // Daily Value %
+  verified    Boolean  @default(true)
+  notes       String?
+}
+
+// ----------------------------------------------------
+// 3. R&D & INNOVATION PIPELINE
+// ----------------------------------------------------
+
+enum RdStage {
+  DISCOVERY
+  FORMULATION
+  PRE_CLINICAL
+  CLINICAL_EVALUATION
+  PILOT_DEVELOPMENT
+  COMMERCIAL_READY
+}
+
+model RdProject {
+  id          String   @id @default(cuid())
+  title       String
+  division    String   // "Bioheed Healthcare" | "Gojo Nutrition" | "GojoMe Intelligence"
+  category    String   // "Biotechnology", "Micro-nutrients", "AI Sifting"
+  stage       RdStage  @default(FORMULATION)
+  summary     String
+  methodology String?
+  expectedImpact String?
+  publishedYear Int    @default(2026)
+  isPublic    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// ----------------------------------------------------
+// 4. CAREERS & TALENT ACQUISITION
+// ----------------------------------------------------
+
+enum JobDepartment {
+  R_AND_D
+  NUTRITION
+  TECHNOLOGY
+  DATA_AND_AI
+  PRODUCT
+  MARKETING
+  SALES
+  OPERATIONS
+  FINANCE
+}
+
+enum JobType {
+  FULL_TIME
+  PART_TIME
+  CONTRACT
+  INTERNSHIP
+}
+
+enum JobStatus {
+  OPEN
+  INTERVIEWING
+  CLOSED
+}
+
+model JobOpening {
+  id           String        @id @default(cuid())
+  title        String
+  department   JobDepartment
+  location     String        @default("Hyderabad, India")
+  isRemote     Boolean       @default(false)
+  type         JobType       @default(FULL_TIME)
+  status       JobStatus     @default(OPEN)
+  description  String
+  requirements String[]
+  benefits     String[]
+  applications Application[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+}
+
+model Application {
+  id           String     @id @default(cuid())
+  jobId        String
+  job          JobOpening @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  fullName     String
+  email        String
+  phone        String
+  linkedIn     String?
+  resumeUrl    String?
+  coverLetter  String?
+  status       String     @default("SUBMITTED")
+  createdAt    DateTime   @default(now())
+}
+
+// ----------------------------------------------------
+// 5. INVESTOR RELATIONS & CORPORATE GOVERNANCE
+// ----------------------------------------------------
+
+enum DocumentCategory {
+  QUARTERLY_REPORT
+  ANNUAL_REPORT
+  PRESS_RELEASE
+  CORPORATE_PRESENTATION
+  ESG_FRAMEWORK
+  ANNOUNCEMENT
+}
+
+model InvestorReport {
+  id          String           @id @default(cuid())
+  title       String
+  category    DocumentCategory
+  period      String           // e.g. "Q1 2026", "FY 2025-26"
+  summary     String
+  fileUrl     String?
+  publishDate DateTime         @default(now())
+  isFeatured  Boolean          @default(false)
+  createdAt   DateTime         @default(now())
+}
+
+// ----------------------------------------------------
+// 6. CONTENT & CMS (ARTICLES & INSIGHTS)
+// ----------------------------------------------------
+
+model Article {
+  id          String    @id @default(cuid())
+  slug        String    @unique
+  title       String
+  excerpt     String
+  content     String
+  category    String    // "Science & R&D", "Nutrition", "Technology", "Corporate"
+  author      String    @default("GOJO Science & Innovation Council")
+  readTime    String    @default("5 min read")
+  coverImage  String?
+  isPublished Boolean   @default(true)
+  publishedAt DateTime  @default(now())
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+// ----------------------------------------------------
+// 7. INQUIRIES & ENGAGEMENT
+// ----------------------------------------------------
+
+enum InquiryType {
+  GENERAL_CORPORATE
+  BIOHEED_HEALTHCARE
+  GOJO_NUTRITION
+  GOJOME_PLATFORM
+  INVESTOR_RELATIONS
+  CAREERS_HR
+  MEDIA_PRESS
+  PARTNERSHIP
+}
+
+model ContactInquiry {
+  id          String      @id @default(cuid())
+  inquiryType InquiryType @default(GENERAL_CORPORATE)
+  fullName    String
+  email       String
+  phone       String?
+  organization String?
+  subject     String
+  message     String
+  status      String      @default("PENDING")
+  createdAt   DateTime    @default(now())
+}
+
+model NewsletterSubscriber {
+  id          String   @id @default(cuid())
+  email       String   @unique
+  source      String   @default("website_footer")
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+}
+
+// ----------------------------------------------------
+// 8. AUTHENTICATION & GOJO ID (PRIVACY ISOLATION)
+// ----------------------------------------------------
+
+enum UserRole {
+  CONSUMER
+  HEALTHCARE_PROFESSIONAL
+  INVESTOR
+  ENTERPRISE_ADMIN
+}
+
+model User {
+  id            String       @id @default(cuid())
+  gojoId        String       @unique // Universal GOJO ID
+  email         String       @unique
+  passwordHash  String?
+  fullName      String
+  role          UserRole     @default(CONSUMER)
+  
+  // Privacy isolation permissions
+  consentGojoMe    Boolean   @default(false)
+  consentNutrition Boolean   @default(true)
+  consentBioheed   Boolean   @default(false) // Strict medical separation
+  
+  profile       GojoProfile?
+  analytics     AnalyticsEvent[]
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+}
+
+model GojoProfile {
+  id             String   @id @default(cuid())
+  userId         String   @unique
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  nutritionScore Int?     @default(85)
+  dailyCalorieTarget Int? @default(2100)
+  dailyProteinTarget Int? @default(85)
+  dailyCalciumTarget Int? @default(1000)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+// ----------------------------------------------------
+// 9. ANALYTICS & QR TELEMETRY
+// ----------------------------------------------------
+
+model AnalyticsEvent {
+  id          String   @id @default(cuid())
+  eventName   String   // "qr_scan", "gojome_activate", "product_view", "inquiry_submit"
+  division    String   // "CORP" | "BIOHEED" | "NUTRITION" | "GOJOME"
+  userId      String?
+  user        User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  metadata    Json?
+  ipHash      String?  // Anonymized hash for privacy
+  userAgent   String?
+  timestamp   DateTime @default(now())
+}
