@@ -58,7 +58,7 @@ export function Footer() {
               Let&apos;s Build a Healthier Tomorrow Together.
             </h2>
             <p className="text-slate-400 text-sm sm:text-base">
-              Subscribe to official GOJO Innovation updates, clinical R&D whitepapers, and ecosystem announcements.
+              Subscribe to official GOJO Innovation updates, clinical R&amp;D whitepapers, and ecosystem announcements.
             </p>
           </div>
 
@@ -124,7 +124,7 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Col 2: The Ecosystem */}
+          {/* Col 2: Divisions */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-white font-heading">
               Our Ecosystem
@@ -151,8 +151,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/ecosystem" className="hover:text-cyan-400 transition-colors">
-                  Integrated Synergy
+                <Link href="/rd-innovation" className="hover:text-cyan-400 transition-colors">
+                  R&amp;D Synergy
                 </Link>
               </li>
             </ul>
@@ -161,7 +161,7 @@ export function Footer() {
           {/* Col 3: Research & Corporate */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-white font-heading">
-              Company & Science
+              Company &amp; Science
             </h4>
             <ul className="space-y-2 text-sm text-slate-400">
               <li>
@@ -171,22 +171,22 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/rd-innovation" className="hover:text-white transition-colors">
-                  R&D & Innovation
+                  R&amp;D &amp; Innovation
                 </Link>
               </li>
               <li>
                 <Link href="/investors" className="hover:text-white transition-colors">
-                  Investor Relations
+                  Investors &amp; Governance
                 </Link>
               </li>
               <li>
                 <Link href="/careers" className="hover:text-white transition-colors">
-                  Careers & Talent
+                  Careers &amp; Openings
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-white transition-colors">
-                  Scientific Blog & Insights
+                <Link href="/contact" className="hover:text-white transition-colors">
+                  Contact &amp; Inquiries
                 </Link>
               </li>
             </ul>
@@ -195,7 +195,7 @@ export function Footer() {
           {/* Col 4: Portals & Access */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-white font-heading">
-              Portals & Legal
+              Portals &amp; Legal
             </h4>
             <ul className="space-y-2 text-sm text-slate-400">
               <li>
@@ -210,7 +210,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/shop" className="hover:text-white transition-colors">
-                  Store & Retail Locator
+                  Store &amp; Retail Locator
                 </Link>
               </li>
               <li>

@@ -32,11 +32,11 @@ export function PageHeader({
           <Badge variant={badgeVariant}>{badge}</Badge>
         </div>
       )}
-      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading tracking-tight text-white leading-[1.15]">
+      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading tracking-tight text-slate-950 dark:text-white leading-[1.15]">
         {title}
       </h1>
       {subtitle && (
-        <p className="text-base sm:text-lg text-slate-400 font-normal leading-relaxed">
+        <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 font-normal leading-relaxed">
           {subtitle}
         </p>
       )}

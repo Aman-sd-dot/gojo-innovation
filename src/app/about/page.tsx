@@ -9,7 +9,7 @@ import { COMPANY_DETAILS } from '@/data/mockData';
 export const metadata = constructMetadata({
   title: 'About Us | GOJO Innovation Pvt. Ltd.',
   description:
-    'Discover the story, mission, and leadership principles behind GOJO Innovation Pvt. Ltd. Life. Vision. Care.',
+    'Discover the story, mission, and leadership principles behind GOJO Innovation Pvt. Ltd. Nutrition. Technology. Healthcare.',
   path: '/about',
 });
 
@@ -25,33 +25,33 @@ export default function AboutPage() {
           subtitle="GOJO Innovation Pvt. Ltd. was founded with a singular conviction: that human wellness thrives when medical science, wholesome nutrition, and intelligent technology act as one unified ecosystem."
         />
 
-        {/* Brand Philosophy: Life. Vision. Care. */}
+        {/* Brand Philosophy: Nutrition. Technology. Healthcare. */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left mb-16">
           <div className="glass-panel p-8 rounded-3xl border-emerald-500/30 bg-slate-900/80 space-y-4">
             <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
               <Heart className="w-6 h-6" />
             </div>
-            <h3 className="text-2xl font-black font-heading text-white">LIFE.</h3>
+            <h3 className="text-2xl font-black font-heading text-white">NUTRITION.</h3>
             <p className="text-sm text-slate-300 leading-relaxed">
-              We prioritize sustainable human vitality over short-lived fads. Every product and digital service is designed to support lifelong wellness and preventive resilience.
-            </p>
-          </div>
-
-          <div className="glass-panel p-8 rounded-3xl border-cyan-500/30 bg-slate-900/80 space-y-4">
-            <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
-              <Eye className="w-6 h-6" />
-            </div>
-            <h3 className="text-2xl font-black font-heading text-white">VISION.</h3>
-            <p className="text-sm text-slate-300 leading-relaxed">
-              We foresee a world where individuals possess total clarity over what they consume, guided by transparent, verified data and intuitive AI insights.
+              We prioritize sustainable nutritional vitality over short-lived fads. Every functional beverage and food product is designed to support lifelong wellness and metabolic resilience.
             </p>
           </div>
 
           <div className="glass-panel p-8 rounded-3xl border-purple-500/30 bg-slate-900/80 space-y-4">
             <div className="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400">
+              <Sparkles className="w-6 h-6" />
+            </div>
+            <h3 className="text-2xl font-black font-heading text-white">TECHNOLOGY.</h3>
+            <p className="text-sm text-slate-300 leading-relaxed">
+              We foresee a world where individuals possess total clarity over what they consume, guided by transparent, verified data, modern R&amp;D, and intuitive AI insights.
+            </p>
+          </div>
+
+          <div className="glass-panel p-8 rounded-3xl border-cyan-500/30 bg-slate-900/80 space-y-4">
+            <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
               <ShieldCheck className="w-6 h-6" />
             </div>
-            <h3 className="text-2xl font-black font-heading text-white">CARE.</h3>
+            <h3 className="text-2xl font-black font-heading text-white">HEALTHCARE.</h3>
             <p className="text-sm text-slate-300 leading-relaxed">
               Rooted in pharmaceutical rigor through Bioheed, we build with uncompromising clinical responsibility, ethical standards, and patient-first governance.
             </p>
@@ -89,8 +89,8 @@ export default function AboutPage() {
           </ul>
 
           <div className="pt-4 flex flex-wrap items-center gap-4">
-            <Button href="/ecosystem" size="lg" variant="primary" rightIcon={<ArrowRight className="w-4 h-4" />}>
-              Explore Full Ecosystem
+            <Button href="/rd-innovation" size="lg" variant="primary" rightIcon={<ArrowRight className="w-4 h-4" />}>
+              Explore R&amp;D &amp; Innovation
             </Button>
             <Button href="/contact" size="lg" variant="outline">
               Contact Leadership

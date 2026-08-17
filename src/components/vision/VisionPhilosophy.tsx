@@ -39,7 +39,7 @@ export function VisionPhilosophy() {
               The GOJO Purpose:
             </span>
             <div className="text-xl sm:text-2xl font-black font-heading bg-gradient-to-r from-emerald-400 via-teal-300 to-purple-400 bg-clip-text text-transparent mt-1">
-              Better Nutrition. Smarter Technology. Better Care.
+              Better Nutrition. Smarter Technology. Advanced Healthcare.
             </div>
           </div>
         </div>

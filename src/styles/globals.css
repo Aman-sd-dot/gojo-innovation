@@ -20,8 +20,6 @@
     color: #F8FAFC;
     font-family: var(--font-inter), sans-serif;
     overflow-x: hidden;
-    selection-background-color: #10B981;
-    selection-color: #FFFFFF;
   }
 
   ::selection {
@@ -57,7 +55,7 @@
 
 /* Glassmorphism & Micro-elevation Utilities */
 .glass-panel {
-  background: rgba(15, 23, 42, 0.7);
+  background: rgba(15, 23, 42, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);

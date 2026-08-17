@@ -29,7 +29,10 @@ export default function RootLayout({
   const jsonLd = getOrganizationJsonLd();
 
   return (
-    <html lang="en" className={`${inter.variable} ${outfit.variable} scroll-smooth dark`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${outfit.variable} scroll-smooth dark`}
+    >
       <head>
         <script
           type="application/ld+json"

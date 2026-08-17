@@ -12,10 +12,11 @@ import {
 export const COMPANY_DETAILS = {
   name: 'GOJO Innovation Pvt. Ltd.',
   shortName: 'GOJO Innovation',
-  tagline: 'Life. Vision. Care.',
+  tagline: 'Nutrition. Technology. Healthcare.',
+  logo: '/images/logo.png',
   heroHeading: 'Building a Smarter Future of Healthcare, Nutrition & Technology',
   heroSubheading:
-    'From healthcare and nutritional product innovation to intelligent nutrition technology, GOJO Innovation is building an ecosystem designed around the evolving needs of modern consumers.',
+    'सर्वे सन्तु निरामयाः। ज्ञानं अस्माकं दीपः।\nविज्ञानम् अस्माकं मार्गः। सेवा अस्माकं धर्मः।\nमानवता अस्माकं लक्ष्यं। एसा गोजोः प्रतिज्ञा॥',
   address: 'Head Office: Hyderabad – 500001, India',
   email: 'info@gojoinnovation.com',
   website: 'www.gojoinnovation.com',

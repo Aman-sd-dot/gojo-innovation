@@ -7,7 +7,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     '',
     '/about',
-    '/ecosystem',
     '/bioheed',
     '/gojo-nutrition',
     '/gojome',

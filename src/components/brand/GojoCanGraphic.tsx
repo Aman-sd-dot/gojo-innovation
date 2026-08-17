@@ -94,6 +94,9 @@ export function GojoCanGraphic({
             <stop offset="75%" stopColor="#FFFFFF" />
             <stop offset="100%" stopColor="#64748B" />
           </linearGradient>
+          <clipPath id="canLogoClip">
+            <circle cx="100" cy="85" r="16" />
+          </clipPath>
         </defs>
 
         {/* Can Top Rim Metal */}
@@ -101,7 +104,7 @@ export function GojoCanGraphic({
         <rect x="36" y="20" width="128" height="8" rx="4" fill="#64748B" />
 
         {/* Can Neck Inset */}
-        <path d="M 36 28 L 24 45 L 176 45 L 164 28 Z" fill="url(#canBodyGrad-vanilla)" opacity="0.9" />
+        <path d="M 36 28 L 24 45 L 176 45 L 164 28 Z" fill={`url(#canBodyGrad-${flavour})`} opacity="0.9" />
 
         {/* Can Main Cylindrical Body */}
         <rect x="20" y="45" width="160" height="290" rx="14" fill={`url(#canBodyGrad-${flavour})`} />
@@ -115,12 +118,27 @@ export function GojoCanGraphic({
 
         {/* ---------------- CAN GRAPHICS & LABELS ---------------- */}
 
-        {/* Top Logo Insignia */}
-        <circle cx="100" cy="85" r="15" fill="#FFFFFF" opacity="0.95" />
-        <path
-          d="M 100 74 C 94 77 92 83 95 89 C 97 85 101 82 106 80 C 105 77 103 74 100 74 Z"
-          fill="#10B981"
-        />
+        {/* Top Logo Insignia: Circular Emblem */}
+        <g id="can-circular-logo">
+          {/* Subtle Outer Glow & White Base Ring */}
+          <circle cx="100" cy="85" r="17" fill="#FFFFFF" opacity="0.95" />
+          <circle cx="100" cy="85" r="16" fill="#080C14" />
+          
+          {/* Circular Clipped Logo Image */}
+          <image
+            href="/images/logo.png"
+            x="84"
+            y="69"
+            width="32"
+            height="32"
+            clipPath="url(#canLogoClip)"
+            preserveAspectRatio="xMidYMid slice"
+          />
+
+          {/* Precision Bezel Ring */}
+          <circle cx="100" cy="85" r="16.5" stroke="url(#rimMetal)" strokeWidth="1.2" fill="none" opacity="0.85" />
+        </g>
+
         <text x="100" y="112" textAnchor="middle" fill="#FFFFFF" fontSize="11" fontWeight="800" letterSpacing="2">
           GOJO
         </text>

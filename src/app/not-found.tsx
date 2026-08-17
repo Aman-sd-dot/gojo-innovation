@@ -24,8 +24,8 @@ export default function NotFound() {
           <Button href="/" size="lg" variant="primary" leftIcon={<Home className="w-4 h-4" />}>
             Return to Home
           </Button>
-          <Button href="/ecosystem" size="lg" variant="outline">
-            Explore Ecosystem
+          <Button href="/about" size="lg" variant="outline">
+            About GOJO
           </Button>
         </div>
       </SectionContainer>
