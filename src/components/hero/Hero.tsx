@@ -45,29 +45,29 @@ export function Hero() {
             </p>
 
             {/* 3 Value Pillars Mini-Badges */}
-            <div className="grid grid-cols-3 gap-3 py-2 border-y border-slate-200 dark:border-slate-800/80">
+            <div className="grid grid-cols-3 gap-1.5 sm:gap-2.5 py-1.5 border-y border-slate-800/80 max-w-md">
               <div className="space-y-0.5">
-                <div className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 text-xs font-bold font-heading">
+                <div className="flex items-center gap-1 text-emerald-400 text-xs font-bold font-heading">
                   <Shield className="w-3.5 h-3.5" />
                   <span>Nutrition</span>
                 </div>
-                <p className="text-[11px] text-slate-500 dark:text-slate-400">Nutritious choices</p>
+                <p className="text-[10.5px] text-slate-400">Nutritious choices</p>
               </div>
 
               <div className="space-y-0.5">
-                <div className="flex items-center gap-1.5 text-purple-600 dark:text-purple-400 text-xs font-bold font-heading">
+                <div className="flex items-center gap-1 text-purple-400 text-xs font-bold font-heading">
                   <Sparkles className="w-3.5 h-3.5" />
                   <span>Technology</span>
                 </div>
-                <p className="text-[11px] text-slate-500 dark:text-slate-400">Intelligent tech</p>
+                <p className="text-[10.5px] text-slate-400">Intelligent tech</p>
               </div>
 
               <div className="space-y-0.5">
-                <div className="flex items-center gap-1.5 text-cyan-600 dark:text-cyan-400 text-xs font-bold font-heading">
+                <div className="flex items-center gap-1 text-cyan-400 text-xs font-bold font-heading">
                   <Eye className="w-3.5 h-3.5" />
                   <span>Healthcare</span>
                 </div>
-                <p className="text-[11px] text-slate-500 dark:text-slate-400">Clinical science</p>
+                <p className="text-[10.5px] text-slate-400">Clinical science</p>
               </div>
             </div>
 
