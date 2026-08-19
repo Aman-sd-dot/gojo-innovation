@@ -22,7 +22,7 @@ export function PageHeader({
   return (
     <div
       className={cn(
-        'max-w-3xl space-y-4 mb-12 sm:mb-16',
+        'max-w-3xl space-y-3 mb-8 sm:mb-10',
         centered ? 'mx-auto text-center' : 'text-left',
         className
       )}
@@ -32,11 +32,11 @@ export function PageHeader({
           <Badge variant={badgeVariant}>{badge}</Badge>
         </div>
       )}
-      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading tracking-tight text-slate-950 dark:text-white leading-[1.15]">
+      <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading tracking-tight text-slate-950 dark:text-white leading-[1.18]">
         {title}
       </h1>
       {subtitle && (
-        <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 font-normal leading-relaxed">
+        <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 font-normal leading-relaxed">
           {subtitle}
         </p>
       )}
