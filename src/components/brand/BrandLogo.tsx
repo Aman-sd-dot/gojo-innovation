@@ -41,7 +41,7 @@ export function BrandLogo({
     <Link
       href={href}
       className={cn(
-        'inline-flex items-center gap-2 group focus:outline-none select-none transition-transform duration-200',
+        'inline-flex items-center gap-3 group focus:outline-none select-none transition-transform duration-200',
         className
       )}
       aria-label={`${COMPANY_DETAILS.name} Home`}

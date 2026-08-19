@@ -14,7 +14,7 @@ export function Hero() {
   const [activeFlavour, setActiveFlavour] = useState<'vanilla' | 'chocolate' | 'coffee'>('vanilla');
 
   return (
-    <section className="relative pt-16 sm:pt-20 lg:pt-24 pb-10 sm:pb-12 lg:pb-14 overflow-hidden scientific-grid">
+    <section className="relative pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden scientific-grid">
       {/* Background radial ambient lights */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-hero-glow pointer-events-none -z-10" />
       <div className="absolute top-10 left-10 w-96 h-96 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none -z-10" />
@@ -22,17 +22,17 @@ export function Hero() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Hero Layout: Left Typography & Right Visual Composition */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Brand Statement & CTAs */}
-          <div className="lg:col-span-6 text-left space-y-2.5 sm:space-y-3">
+          <div className="lg:col-span-6 text-left space-y-6">
             {/* Tagline Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-300 text-xs font-bold tracking-[0.2em] uppercase">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-300 text-xs font-bold tracking-[0.2em] uppercase">
               <Sparkles className="w-3.5 h-3.5 text-emerald-500 dark:text-emerald-400" />
               <span>{COMPANY_DETAILS.tagline}</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-2xl sm:text-3xl xl:text-3xl font-extrabold font-heading text-slate-950 dark:text-white tracking-tight leading-[1.15]">
+            <h1 className="text-4xl sm:text-5xl xl:text-6xl font-extrabold font-heading text-slate-950 dark:text-white tracking-tight leading-[1.12]">
               Building a legacy for Smarter Future of{' '}
               <span className="bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 dark:from-emerald-400 dark:via-teal-300 dark:to-cyan-400 bg-clip-text text-transparent">
                 Healthcare, Nutrition &amp; Technology
@@ -170,7 +170,7 @@ export function Hero() {
         {/* ---------------------------------------------------- */}
         {/* Connected Ecosystem Ribbon Banner (Matching Reference) */}
         {/* ---------------------------------------------------- */}
-        <div className="mt-10 sm:mt-12 pt-6 border-t border-slate-200 dark:border-slate-800/80">
+        <div className="mt-16 sm:mt-24 pt-8 border-t border-slate-200 dark:border-slate-800/80">
           <div className="text-center mb-6">
             <h3 className="text-xl sm:text-2xl font-extrabold font-heading text-slate-950 dark:text-white">
               Our Integrated Ecosystem

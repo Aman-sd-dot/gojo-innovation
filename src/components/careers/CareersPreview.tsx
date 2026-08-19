@@ -21,16 +21,15 @@ export function CareersPreview() {
   ];
 
   return (
-    <SectionContainer className="border-t border-slate-800 bg-slate-900/40 py-12 sm:py-16">
+    <SectionContainer className="border-t border-slate-800 bg-slate-900/40">
       <PageHeader
         badge="JOIN THE MISSION"
         badgeVariant="emerald"
         title="Build the Future With Us."
         subtitle="We are looking for passionate minds who believe that healthcare, nutrition, and technology can create a healthier tomorrow."
-        className="mb-8 sm:mb-10"
       />
 
-      <div className="glass-panel rounded-3xl p-6 sm:p-10 border border-slate-800 bg-slate-950/80 text-left max-w-4xl mx-auto space-y-6">
+      <div className="glass-panel rounded-3xl p-8 sm:p-12 border border-slate-800 bg-slate-950/80 text-left max-w-4xl mx-auto space-y-8">
         <div className="space-y-4">
           <h3 className="text-xl sm:text-2xl font-extrabold font-heading text-white">
             Join the Multi-Disciplinary GOJO Innovation Ecosystem
