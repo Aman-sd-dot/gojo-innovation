@@ -27,10 +27,10 @@ export function BrandLogo({
 }: BrandLogoProps) {
   // Size presets for icon and typography
   const sizeStyles = {
-    sm: { iconSize: 34, text: 'text-base', sub: 'text-[9px]' },
-    md: { iconSize: 44, text: 'text-xl', sub: 'text-[10px]' },
-    lg: { iconSize: 56, text: 'text-2xl', sub: 'text-[11.5px]' },
-    xl: { iconSize: 72, text: 'text-3xl', sub: 'text-[13px]' },
+    sm: { iconSize: 28, text: 'text-sm', sub: 'text-[8.5px]' },
+    md: { iconSize: 36, text: 'text-lg', sub: 'text-[9.5px]' },
+    lg: { iconSize: 48, text: 'text-xl', sub: 'text-[10.5px]' },
+    xl: { iconSize: 60, text: 'text-2xl', sub: 'text-[12px]' },
   };
 
   const currentSize = sizeStyles[size] || sizeStyles.md;
@@ -41,7 +41,7 @@ export function BrandLogo({
     <Link
       href={href}
       className={cn(
-        'inline-flex items-center gap-3 group focus:outline-none select-none transition-transform duration-200',
+        'inline-flex items-center gap-2.5 group focus:outline-none select-none transition-transform duration-200',
         className
       )}
       aria-label={`${COMPANY_DETAILS.name} Home`}

@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/bioheed',
     '/gojo-nutrition',
     '/gojome',
+    '/gojo-impact',
     '/rd-innovation',
     '/investors',
     '/careers',

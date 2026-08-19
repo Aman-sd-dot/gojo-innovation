@@ -11,7 +11,7 @@ export function PhysicalToDigitalGateway() {
   const steps = [
     { title: 'BUY GOJO', desc: 'Pick up GOJO – The Maharaja’s Drink from your favourite store.', icon: ShoppingBag, color: 'text-amber-400' },
     { title: 'SCAN', desc: 'Scan the on-can QR code with any smartphone camera.', icon: QrCode, color: 'text-cyan-400' },
-    { title: 'ACCESS GOJOME', desc: 'Instant access to your nutrition intelligence dashboard.', icon: Smartphone, color: 'text-purple-400' },
+    { title: 'ACCESS GojoMe', desc: 'Instant access to your nutrition intelligence dashboard.', icon: Smartphone, color: 'text-purple-400' },
     { title: 'TRACK YOUR NUTRITION', desc: 'Auto-log 12g protein and 350mg bioavailable calcium.', icon: LineChart, color: 'text-blue-400' },
     { title: 'AI-POWERED INSIGHTS', desc: 'Contextual recommendations to reach your daily goal.', icon: Sparkles, color: 'text-teal-400' },
     { title: 'MAKE BETTER CHOICES', desc: 'Build lasting vitality through informed habits.', icon: CheckCircle, color: 'text-emerald-400' },

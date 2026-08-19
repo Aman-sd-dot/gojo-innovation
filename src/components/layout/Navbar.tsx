@@ -18,6 +18,7 @@ import {
   Briefcase,
   Phone,
   ChevronRight,
+  HeartHandshake,
 } from 'lucide-react';
 import { BrandLogo } from '@/components/brand/BrandLogo';
 import { Button } from '@/components/ui/Button';
@@ -64,6 +65,7 @@ export function Navbar() {
     { name: 'Bioheed', href: '/bioheed', icon: ShieldCheck, badge: 'Healthcare' },
     { name: 'Gojo Nutrition', href: '/gojo-nutrition', icon: Zap, badge: 'Beverage' },
     { name: 'GojoMe', href: '/gojome', icon: Sparkles, badge: 'AI Platform' },
+    { name: 'GojoImpact', href: '/gojo-impact', icon: HeartHandshake, badge: 'Impact' },
     { name: 'R&D & Innovation', href: '/rd-innovation', icon: FlaskConical },
     { name: 'Investors', href: '/investors', icon: TrendingUp },
     { name: 'Careers', href: '/careers', icon: Briefcase, badge: 'Hiring' },
@@ -105,6 +107,14 @@ export function Navbar() {
           subtitle: 'Nutrition Intelligence & Tracker',
         },
         {
+          name: 'GojoImpact',
+          href: '/gojo-impact',
+          icon: HeartHandshake,
+          badge: 'ESG & Health',
+          badgeColor: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30',
+          subtitle: 'Community Health, Sustainability & ESG',
+        },
+        {
           name: 'R&D & Innovation',
           href: '/rd-innovation',
           icon: FlaskConical,
@@ -138,7 +148,7 @@ export function Navbar() {
           <BrandLogo size="md" />
 
           {/* Desktop Navigation */}
-          <nav className="hidden xl:flex items-center gap-1">
+          <nav className="hidden xl:flex items-center gap-1 2xl:gap-1.5">
             {mainNavLinks.map((link) => {
               const isActive = pathname === link.href;
 
@@ -147,7 +157,7 @@ export function Navbar() {
                   key={link.name}
                   href={link.href}
                   className={cn(
-                    'px-3 py-2 rounded-lg text-xs font-semibold uppercase tracking-wider transition-colors',
+                    'px-2.5 2xl:px-3 py-1.5 rounded-lg text-[13px] font-semibold transition-colors',
                     isActive
                       ? 'text-emerald-400 bg-emerald-950/40 border border-emerald-500/30 font-bold'
                       : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
@@ -163,7 +173,7 @@ export function Navbar() {
           <div className="hidden lg:flex items-center gap-3">
             <Link
               href="/contact"
-              className="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800/60 transition-colors"
+              className="text-[13px] font-semibold text-slate-300 hover:text-white px-3 py-1.5 rounded-lg hover:bg-slate-800/60 transition-colors"
             >
               Contact
             </Link>

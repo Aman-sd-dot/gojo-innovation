@@ -151,6 +151,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/gojo-impact" className="hover:text-emerald-400 transition-colors">
+                  GojoImpact (ESG)
+                </Link>
+              </li>
+              <li>
                 <Link href="/rd-innovation" className="hover:text-cyan-400 transition-colors">
                   R&amp;D Synergy
                 </Link>

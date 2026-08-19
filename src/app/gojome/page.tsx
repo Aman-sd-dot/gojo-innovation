@@ -27,7 +27,7 @@ export default function GojoMePage() {
         <PageHeader
           badge="NUTRITION INTELLIGENCE PLATFORM"
           badgeVariant="purple"
-          title="GOJOME"
+          title="GojoMe"
           subtitle="Your Personal Nutrition Intelligence. Know what you eat. Understand what you need. Make better choices."
         />
 

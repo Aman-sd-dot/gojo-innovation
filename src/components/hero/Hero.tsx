@@ -26,16 +26,23 @@ export function Hero() {
           {/* Left Column: Brand Statement & CTAs */}
           <div className="lg:col-span-6 text-left space-y-6">
             {/* Tagline Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 dark:text-emerald-300 text-xs font-bold tracking-[0.2em] uppercase">
-              <Sparkles className="w-3.5 h-3.5 text-emerald-500 dark:text-emerald-400" />
-              <span>{COMPANY_DETAILS.tagline}</span>
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#469e32] text-white text-xs font-bold tracking-[0.14em] uppercase shadow-md shadow-emerald-950/40">
+              <Sparkles className="w-3.5 h-3.5 fill-white text-white" />
+              <span>Nutrition. Technology. Healthcare</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl xl:text-6xl font-extrabold font-heading text-slate-950 dark:text-white tracking-tight leading-[1.12]">
-              Building a legacy for Smarter Future of{' '}
-              <span className="bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 dark:from-emerald-400 dark:via-teal-300 dark:to-cyan-400 bg-clip-text text-transparent">
-                Healthcare, Nutrition &amp; Technology
+            <h1 className="text-3xl sm:text-4xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-extrabold font-heading text-white tracking-tight leading-[1.08]">
+              <span className="block text-white whitespace-nowrap">Building Legacy for a</span>
+              <span className="block text-white whitespace-nowrap">Smarter Future of</span>
+              <span className="block mt-1 bg-gradient-to-r from-[#6366f1] via-[#507bf8] to-[#38bdf8] bg-clip-text text-transparent">
+                Nutrition,
+              </span>
+              <span className="block bg-gradient-to-r from-[#38bdf8] via-[#14b8a6] to-[#34d399] bg-clip-text text-transparent">
+                Technology &amp;
+              </span>
+              <span className="block bg-gradient-to-r from-[#6366f1] via-[#06b6d4] to-[#4ade80] bg-clip-text text-transparent">
+                Healthcare
               </span>
             </h1>
 
@@ -175,7 +182,7 @@ export function Hero() {
             <h3 className="text-xl sm:text-2xl font-extrabold font-heading text-slate-950 dark:text-white">
               Our Integrated Ecosystem
             </h3>
-            <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 tracking-widest uppercase font-semibold mt-1">
+            <p className="text-xs sm:text-sm text-slate-400 dark:text-slate-300 tracking-widest uppercase font-semibold mt-1">
               Science • Nutrition • Technology
             </p>
           </div>
