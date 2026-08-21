@@ -9,7 +9,7 @@ import { COMPANY_DETAILS } from '@/data/mockData';
 export const metadata = constructMetadata({
   title: 'About Us | GOJO Innovation Pvt. Ltd.',
   description:
-    'Discover the story, mission, and leadership principles behind GOJO Innovation Pvt. Ltd. Nutrition. Technology. Healthcare.',
+    'Discover the story, mission, and leadership principles behind GOJO Innovation Pvt. Ltd. Nutrition. Technology. Healthcare',
   path: '/about',
 });
 

@@ -27,10 +27,10 @@ export function BrandLogo({
 }: BrandLogoProps) {
   // Size presets for icon and typography
   const sizeStyles = {
-    sm: { iconSize: 28, text: 'text-sm', sub: 'text-[8.5px]' },
-    md: { iconSize: 36, text: 'text-lg', sub: 'text-[9.5px]' },
-    lg: { iconSize: 48, text: 'text-xl', sub: 'text-[10.5px]' },
-    xl: { iconSize: 60, text: 'text-2xl', sub: 'text-[12px]' },
+    sm: { iconSize: 28, text: 'text-sm', sub: 'text-[10px]' },
+    md: { iconSize: 36, text: 'text-lg', sub: 'text-xs' },
+    lg: { iconSize: 48, text: 'text-xl', sub: 'text-[13px]' },
+    xl: { iconSize: 60, text: 'text-2xl', sub: 'text-[15px]' },
   };
 
   const currentSize = sizeStyles[size] || sizeStyles.md;
@@ -78,11 +78,11 @@ export function BrandLogo({
           </div>
           <span
             className={cn(
-              'font-semibold tracking-[0.18em] uppercase text-slate-500 dark:text-slate-400 font-heading leading-tight mt-0.5 group-hover:text-slate-700 dark:group-hover:text-slate-300 transition-colors',
+              'font-semibold tracking-[0.12em] uppercase text-slate-400 dark:text-slate-300 font-heading leading-tight mt-0.5 group-hover:text-slate-600 dark:group-hover:text-white transition-colors',
               currentSize.sub
             )}
           >
-            Innovation Pvt. Ltd.
+            Innovation Pvt. Ltd
           </span>
         </div>
       )}

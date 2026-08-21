@@ -14,7 +14,7 @@ export function Hero() {
   const [activeFlavour, setActiveFlavour] = useState<'vanilla' | 'chocolate' | 'coffee'>('vanilla');
 
   return (
-    <section className="relative pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden scientific-grid">
+    <section className="relative pt-20 pb-14 lg:pt-24 lg:pb-20 overflow-hidden scientific-grid">
       {/* Background radial ambient lights */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-hero-glow pointer-events-none -z-10" />
       <div className="absolute top-10 left-10 w-96 h-96 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none -z-10" />
@@ -26,8 +26,8 @@ export function Hero() {
           {/* Left Column: Brand Statement & CTAs */}
           <div className="lg:col-span-6 text-left space-y-6">
             {/* Tagline Badge */}
-            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#469e32] text-white text-xs font-bold tracking-[0.14em] uppercase shadow-md shadow-emerald-950/40">
-              <Sparkles className="w-3.5 h-3.5 fill-white text-white" />
+            <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 dark:text-emerald-300 text-[9px] font-bold tracking-[0.02em] uppercase">
+              <Sparkles className="w-2.5 h-2.5 text-emerald-400 shrink-0" />
               <span>Nutrition. Technology. Healthcare</span>
             </div>
 
@@ -35,13 +35,13 @@ export function Hero() {
             <h1 className="text-3xl sm:text-4xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-extrabold font-heading text-white tracking-tight leading-[1.08]">
               <span className="block text-white whitespace-nowrap">Building Legacy for a</span>
               <span className="block text-white whitespace-nowrap">Smarter Future of</span>
-              <span className="block mt-1 bg-gradient-to-r from-[#6366f1] via-[#507bf8] to-[#38bdf8] bg-clip-text text-transparent">
+              <span className="block mt-1 bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
                 Nutrition,
               </span>
-              <span className="block bg-gradient-to-r from-[#38bdf8] via-[#14b8a6] to-[#34d399] bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
                 Technology &amp;
               </span>
-              <span className="block bg-gradient-to-r from-[#6366f1] via-[#06b6d4] to-[#4ade80] bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
                 Healthcare
               </span>
             </h1>

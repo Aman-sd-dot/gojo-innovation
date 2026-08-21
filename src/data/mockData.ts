@@ -12,7 +12,7 @@ import {
 export const COMPANY_DETAILS = {
   name: 'GOJO Innovation Pvt. Ltd.',
   shortName: 'GOJO Innovation',
-  tagline: 'Nutrition. Technology. Healthcare.',
+  tagline: 'Nutrition. Technology. Healthcare',
   logo: '/images/logo.png',
   heroHeading: 'Building Legacy for a Smarter Future of Nutrition, Technology & Healthcare',
   heroSubheading:
