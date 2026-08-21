@@ -32,16 +32,20 @@ export function Hero() {
             </div>
 
             {/* Main Headline */}
-            <h1 className="font-extrabold font-heading text-white tracking-tight leading-normal">
-              <span className="block text-white whitespace-nowrap text-3xl sm:text-5xl lg:text-[60px] xl:text-[70px] leading-[1.1]">Building Legacy for a</span>
-              <span className="block text-white whitespace-nowrap text-3xl sm:text-5xl lg:text-[60px] xl:text-[70px] leading-[1.1]">Smarter Future of</span>
-              <span className="block mt-3 bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent text-2xl sm:text-4xl lg:text-[48px] xl:text-[57px] leading-tight">
+            <h1 className="font-extrabold font-heading text-white tracking-tight flex flex-col gap-2.5 lg:gap-3.5">
+              <span className="block text-white whitespace-nowrap text-3xl sm:text-5xl lg:text-[60px] xl:text-[70px] leading-none">
+                Building Legacy for a
+              </span>
+              <span className="block text-white whitespace-nowrap text-3xl sm:text-5xl lg:text-[60px] xl:text-[70px] leading-none">
+                Smarter Future of
+              </span>
+              <span className="block bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent text-2xl sm:text-4xl lg:text-[48px] xl:text-[57px] leading-none py-1">
                 Nutrition,
               </span>
-              <span className="block mt-4 sm:mt-5 bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent text-2xl sm:text-4xl lg:text-[48px] xl:text-[57px] leading-tight">
+              <span className="block bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent text-2xl sm:text-4xl lg:text-[48px] xl:text-[57px] leading-none py-1">
                 Technology &amp;
               </span>
-              <span className="block mt-4 sm:mt-5 bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent text-3xl sm:text-5xl lg:text-[62px] xl:text-[72px] leading-tight">
+              <span className="block bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent text-3xl sm:text-5xl lg:text-[62px] xl:text-[72px] leading-none py-1">
                 Healthcare
               </span>
             </h1>
