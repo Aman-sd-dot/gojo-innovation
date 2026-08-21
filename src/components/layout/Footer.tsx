@@ -96,7 +96,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-slate-800/80 text-left">
           {/* Col 1: Brand Info */}
           <div className="lg:col-span-2 space-y-4">
-            <BrandLogo size="md" />
+            <BrandLogo size="lg" />
             <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
               GOJO Innovation Pvt. Ltd. unites healthcare pharmaceutical science, nutritional formulation, and intelligent technology to build a healthier world.
             </p>
