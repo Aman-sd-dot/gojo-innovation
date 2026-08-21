@@ -24,7 +24,7 @@ export function Hero() {
         {/* Top Hero Layout: Left Typography & Right Visual Composition */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Brand Statement & CTAs */}
-          <div className="lg:col-span-6 text-left space-y-6">
+          <div className="lg:col-span-6 text-left space-y-3.5">
             {/* Tagline Badge */}
             <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 dark:text-emerald-300 text-[9px] font-bold tracking-[0.02em] uppercase">
               <Sparkles className="w-2.5 h-2.5 text-emerald-400 shrink-0" />
@@ -32,16 +32,16 @@ export function Hero() {
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-3xl sm:text-4xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-extrabold font-heading text-white tracking-tight leading-[1.22]">
+            <h1 className="text-3xl sm:text-4xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-extrabold font-heading text-white tracking-tight leading-[1.2]">
               <span className="block text-white whitespace-nowrap">Building Legacy for a</span>
               <span className="block text-white whitespace-nowrap">Smarter Future of</span>
-              <span className="block mt-1.5 bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
+              <span className="block pr-3 pb-1 mt-0.5 bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent text-2xl sm:text-3xl lg:text-4xl xl:text-[38px]">
                 Nutrition,
               </span>
-              <span className="block mt-1.5 bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
+              <span className="block pr-3 pb-1 mt-0.5 bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent text-2xl sm:text-3xl lg:text-4xl xl:text-[38px]">
                 Technology &amp;
               </span>
-              <span className="block mt-2 bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
+              <span className="block pr-3 pb-1 mt-0.5 bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent text-3xl sm:text-4xl lg:text-5xl xl:text-[45px]">
                 Healthcare
               </span>
             </h1>
