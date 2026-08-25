@@ -95,7 +95,7 @@ export function GojoCanGraphic({
         <div className="absolute inset-0 bg-gradient-to-tr from-[#DFCFAD]/30 via-[#F2EBCE]/40 to-transparent blur-2xl rounded-full pointer-events-none scale-125" />
 
         <img
-          src="/images/gojo_vanilla_can_real.png?v=3"
+          src="/images/gojo_vanilla_can_real.png?v=4"
           alt="GOJO Maharaja's Drink Vanilla"
           width={width}
           height={height}
