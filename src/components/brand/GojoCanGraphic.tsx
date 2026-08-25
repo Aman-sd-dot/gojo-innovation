@@ -84,18 +84,17 @@ export function GojoCanGraphic({
 
   const { width, height } = dimensions[size];
 
-  // If vanilla flavour, render the user's authentic high-res bottle photo directly
+  // If vanilla flavour, render the user's authentic high-res bottle photo directly (100% untouched original image)
   if (flavour === 'vanilla') {
     return (
       <div
         className={cn('relative inline-flex items-center justify-center select-none group', className)}
-        style={{ filter: `drop-shadow(0 20px 30px ${current.glow})` }}
       >
-        {/* Matching Warm Golden Ambient Radial Glow */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-[#DFCFAD]/30 via-[#F2EBCE]/40 to-transparent blur-2xl rounded-full pointer-events-none scale-125" />
+        {/* Matching Warm Ambient Glow around original image */}
+        <div className="absolute -inset-4 bg-gradient-to-br from-[#F8F2E6]/40 via-[#F2EBCE]/30 to-[#DFCFAD]/20 blur-2xl rounded-full pointer-events-none" />
 
         <img
-          src="/images/gojo_vanilla_can_real.png?v=4"
+          src="/images/gojo_vanilla_can_real.png?v=5"
           alt="GOJO Maharaja's Drink Vanilla"
           width={width}
           height={height}
