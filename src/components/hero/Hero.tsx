@@ -21,8 +21,8 @@ export function Hero() {
         style={{ backgroundImage: "url('/images/hero_nature_background.jpg?v=7')" }}
       />
 
-      {/* Warm Ambient Sunlight Radial Glow Matching Original Can Image Background Tone */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] bg-gradient-to-br from-[#F8F2E6]/35 via-[#F2EBCE]/25 to-[#DFCFAD]/20 rounded-full blur-3xl pointer-events-none z-0" />
+      {/* Warm Ambient Sunlight Radial Glow Matching Exact Original Can Image Background Tones (#F2EBCE -> #DFCFAD) */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] bg-gradient-to-r from-[#F2EBCE]/40 via-[#EFE6C9]/30 to-[#DFCFAD]/25 rounded-full blur-3xl pointer-events-none z-0" />
       <div className="absolute top-10 left-10 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none z-0" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -51,8 +51,8 @@ export function Hero() {
               </span>
             </h1>
 
-            {/* Sub-headline description / Sanskrit Pledge */}
-            <p className="text-sm sm:text-base text-slate-200 font-medium leading-relaxed max-w-xl whitespace-pre-line opacity-95">
+            {/* Sanskrit Pledge Subheading (Bold Black Text without Card BG) */}
+            <p className="text-xs sm:text-sm font-extrabold text-slate-950 dark:text-slate-950 leading-relaxed whitespace-pre-line tracking-wider my-2.5 max-w-xl drop-shadow-sm">
               {COMPANY_DETAILS.heroSubheading}
             </p>
 

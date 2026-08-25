@@ -84,22 +84,55 @@ export function GojoCanGraphic({
 
   const { width, height } = dimensions[size];
 
-  // If vanilla flavour, render the user's authentic high-res bottle photo directly (100% untouched original image)
+  // If vanilla flavour, render authentic high-res vanilla bottle photo
   if (flavour === 'vanilla') {
     return (
       <div
         className={cn('relative inline-flex items-center justify-center select-none group', className)}
       >
-        {/* Matching Warm Ambient Glow around original image */}
-        <div className="absolute -inset-4 bg-gradient-to-br from-[#F8F2E6]/40 via-[#F2EBCE]/30 to-[#DFCFAD]/20 blur-2xl rounded-full pointer-events-none" />
-
         <img
-          src="/images/gojo_vanilla_can_real.png?v=5"
+          src="/images/gojo_vanilla_can_real.png?v=10"
           alt="GOJO Maharaja's Drink Vanilla"
           width={width}
           height={height}
           style={{ width: `${width}px`, height: 'auto', maxHeight: `${height}px` }}
-          className="relative z-10 object-contain transform transition-transform duration-500 group-hover:scale-105 group-hover:-translate-y-1 drop-shadow-2xl"
+          className="relative z-10 object-contain transform transition-transform duration-500 group-hover:scale-105 group-hover:-translate-y-1 drop-shadow-2xl [mask-image:radial-gradient(58%_96%_at_center,black_55%,transparent_92%)]"
+        />
+      </div>
+    );
+  }
+
+  // If chocolate flavour, render authentic high-res chocolate bottle photo
+  if (flavour === 'chocolate') {
+    return (
+      <div
+        className={cn('relative inline-flex items-center justify-center select-none group', className)}
+      >
+        <img
+          src="/images/gojo_chocolate_can_real.png?v=1"
+          alt="GOJO Maharaja's Drink Chocolate"
+          width={width}
+          height={height}
+          style={{ width: `${width}px`, height: 'auto', maxHeight: `${height}px` }}
+          className="relative z-10 object-contain transform transition-transform duration-500 group-hover:scale-105 group-hover:-translate-y-1 drop-shadow-2xl [mask-image:radial-gradient(58%_96%_at_center,black_55%,transparent_92%)]"
+        />
+      </div>
+    );
+  }
+
+  // If coffee flavour, render authentic high-res coffee bottle photo
+  if (flavour === 'coffee') {
+    return (
+      <div
+        className={cn('relative inline-flex items-center justify-center select-none group', className)}
+      >
+        <img
+          src="/images/gojo_coffee_can_real.png?v=1"
+          alt="GOJO Maharaja's Drink Coffee"
+          width={width}
+          height={height}
+          style={{ width: `${width}px`, height: 'auto', maxHeight: `${height}px` }}
+          className="relative z-10 object-contain transform transition-transform duration-500 group-hover:scale-105 group-hover:-translate-y-1 drop-shadow-2xl [mask-image:radial-gradient(58%_96%_at_center,black_55%,transparent_92%)]"
         />
       </div>
     );
