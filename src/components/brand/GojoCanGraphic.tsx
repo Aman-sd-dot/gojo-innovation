@@ -92,7 +92,7 @@ export function GojoCanGraphic({
         style={{ filter: `drop-shadow(0 25px 35px ${current.glow})` }}
       >
         <img
-          src="/images/gojo_vanilla_can_real.png"
+          src="/images/gojo_vanilla_can_real.png?v=2"
           alt="GOJO Maharaja's Drink Vanilla"
           width={width}
           height={height}
