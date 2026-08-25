@@ -16,9 +16,9 @@ export function GojoCanGraphic({
 }: GojoCanGraphicProps) {
   const flavourThemes = {
     vanilla: {
-      gradientTop: '#E6D3C2',
-      gradientMid: '#DEC7B9',
-      gradientBot: '#D6BAA3',
+      gradientTop: '#F2EBCE',
+      gradientMid: '#EADBB9',
+      gradientBot: '#DFCFAD',
       rimGrad: 'url(#goldRimMetal)',
       rimInner: '#8C5412',
       textColor: '#241812',
@@ -32,7 +32,7 @@ export function GojoCanGraphic({
       microBadgeBg: 'rgba(255, 255, 255, 0.45)',
       microBadgeBorder: '#B87B2E',
       flavourLabel: 'VANILLA',
-      glow: 'rgba(197, 145, 59, 0.45)',
+      glow: 'rgba(242, 235, 206, 0.55)',
     },
     chocolate: {
       gradientTop: '#78350F',
@@ -89,15 +89,18 @@ export function GojoCanGraphic({
     return (
       <div
         className={cn('relative inline-flex items-center justify-center select-none group', className)}
-        style={{ filter: `drop-shadow(0 25px 35px ${current.glow})` }}
+        style={{ filter: `drop-shadow(0 20px 30px ${current.glow})` }}
       >
+        {/* Matching Warm Golden Ambient Radial Glow */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-[#DFCFAD]/30 via-[#F2EBCE]/40 to-transparent blur-2xl rounded-full pointer-events-none scale-125" />
+
         <img
-          src="/images/gojo_vanilla_can_real.png?v=2"
+          src="/images/gojo_vanilla_can_real.png?v=3"
           alt="GOJO Maharaja's Drink Vanilla"
           width={width}
           height={height}
           style={{ width: `${width}px`, height: 'auto', maxHeight: `${height}px` }}
-          className="object-contain transform transition-transform duration-500 group-hover:scale-105 group-hover:-translate-y-1 drop-shadow-2xl"
+          className="relative z-10 object-contain transform transition-transform duration-500 group-hover:scale-105 group-hover:-translate-y-1 drop-shadow-2xl"
         />
       </div>
     );
