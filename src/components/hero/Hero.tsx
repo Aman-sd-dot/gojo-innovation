@@ -15,12 +15,17 @@ export function Hero() {
 
   return (
     <section className="relative pt-20 pb-14 lg:pt-24 lg:pb-20 overflow-hidden scientific-grid">
+      {/* Nature Botanical Background Asset */}
+      <div 
+        className="absolute inset-0 bg-[length:100%_100%] bg-center bg-no-repeat opacity-90 z-0 pointer-events-none"
+        style={{ backgroundImage: "url('/images/hero_nature_background.jpg?v=7')" }}
+      />
       {/* Background radial ambient lights */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-hero-glow pointer-events-none -z-10" />
-      <div className="absolute top-10 left-10 w-96 h-96 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute top-20 right-10 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-hero-glow pointer-events-none z-0" />
+      <div className="absolute top-10 left-10 w-96 h-96 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none z-0" />
+      <div className="absolute top-20 right-10 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl pointer-events-none z-0" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Top Hero Layout: Left Typography & Right Visual Composition */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Brand Statement & CTAs */}
