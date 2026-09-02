@@ -91,7 +91,7 @@ export function GojoCanGraphic({
         className={cn('relative inline-flex items-center justify-center select-none group', className)}
       >
         <img
-          src="/images/gojo_vanilla_can_real.png?v=10"
+          src="/images/gojo_vanilla_can_real.png?v=50"
           alt="GOJO Maharaja's Drink Vanilla"
           width={width}
           height={height}
@@ -109,7 +109,7 @@ export function GojoCanGraphic({
         className={cn('relative inline-flex items-center justify-center select-none group', className)}
       >
         <img
-          src="/images/gojo_chocolate_can_real.png?v=1"
+          src="/images/gojo_chocolate_can_real.png?v=50"
           alt="GOJO Maharaja's Drink Chocolate"
           width={width}
           height={height}
@@ -127,7 +127,7 @@ export function GojoCanGraphic({
         className={cn('relative inline-flex items-center justify-center select-none group', className)}
       >
         <img
-          src="/images/gojo_coffee_can_real.png?v=1"
+          src="/images/gojo_coffee_can_real.png?v=50"
           alt="GOJO Maharaja's Drink Coffee"
           width={width}
           height={height}
