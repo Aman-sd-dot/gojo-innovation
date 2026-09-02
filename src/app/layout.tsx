@@ -35,10 +35,6 @@ export default function RootLayout({
       className={`${inter.variable} ${outfit.variable} scroll-smooth dark`}
     >
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/logo.png" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-QZD5D28HDD"
           strategy="afterInteractive"
