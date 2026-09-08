@@ -1,35 +1,42 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Sparkles, Shield, Eye, Heart, ArrowUpRight } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
-import { GojoCanGraphic } from '@/components/brand/GojoCanGraphic';
 import { GojoMePhoneMockup } from '@/components/brand/GojoMePhoneMockup';
 import { QrCard } from '@/components/brand/QrCard';
 import { COMPANY_DETAILS } from '@/data/mockData';
 import { trackEvent } from '@/lib/analytics/tracker';
 
 export function Hero() {
-  const [activeFlavour, setActiveFlavour] = useState<'vanilla' | 'chocolate' | 'coffee'>('vanilla');
-
   return (
     <section className="relative pt-20 pb-14 lg:pt-24 lg:pb-20 overflow-hidden">
-      {/* Nature Botanical Background Asset */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 pointer-events-none opacity-95"
-        style={{ backgroundImage: "url('/images/hero_nature_background.jpg?v=7')" }}
-      />
+      {/* Home Page GOJO Tech & Nature Hero Artwork Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <Image
+          src="/images/home_bg.jpg"
+          alt="GOJO Innovation - Tech, Healthcare & Nutrition"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center opacity-30 scale-105"
+        />
+        {/* Dark Gradient Overlay & Soft Vignette for Readable Text */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#080C14]/80 via-[#080C14]/65 to-[#080C14]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#080C14]/85 via-transparent to-[#080C14]/85" />
+      </div>
 
-      {/* Warm Ambient Sunlight Radial Glow Matching Exact Original Can Image Background Tones (#F2EBCE -> #DFCFAD) */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] bg-gradient-to-r from-[#F2EBCE]/40 via-[#EFE6C9]/30 to-[#DFCFAD]/25 rounded-full blur-3xl pointer-events-none z-0" />
-      <div className="absolute top-10 left-10 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none z-0" />
+      {/* Vibrant Tech & Nature Ambient Radial Glows */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-emerald-500/15 rounded-full blur-3xl pointer-events-none z-0" />
+      <div className="absolute top-10 left-10 w-96 h-96 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none z-0" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Top Hero Layout: Left Typography & Right Visual Composition */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
           {/* Left Column: Brand Statement & CTAs */}
-          <div className="lg:col-span-5 text-left space-y-4">
+          <div className="lg:col-span-6 text-left space-y-4">
             {/* Tagline Badge */}
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-extrabold tracking-wider uppercase">
               <Sparkles className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
@@ -51,8 +58,8 @@ export function Hero() {
               </span>
             </h1>
 
-            {/* Sanskrit Pledge Subheading (Bold Black Text without Card BG) */}
-            <p className="text-xs sm:text-sm font-extrabold text-slate-950 dark:text-slate-950 leading-relaxed whitespace-pre-line tracking-wider my-2.5 max-w-xl drop-shadow-sm">
+            {/* Sanskrit Pledge Subheading */}
+            <p className="text-xs sm:text-sm font-semibold text-slate-300 leading-relaxed whitespace-pre-line tracking-wider my-2.5 max-w-xl">
               {COMPANY_DETAILS.heroSubheading}
             </p>
 
@@ -121,58 +128,8 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right Column: Premium Visual Composite (Can + Phone + QR) */}
-          <div className="lg:col-span-7 relative flex flex-col md:flex-row items-center justify-center gap-4 lg:gap-6 pt-4 sm:pt-6">
-            {/* Visual 1: 3D Product Can + Flavour Selector directly above */}
-            <div className="relative shrink-0 flex flex-col items-center">
-              {/* Flavour Selector Pills positioned higher up above bottle */}
-              <div className="mb-4 z-30 flex items-center gap-1.5 bg-slate-950/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-slate-700/90 shadow-2xl">
-                <span className="text-[10.5px] text-slate-300 uppercase tracking-wider font-extrabold mr-1">FLAVOUR:</span>
-                <button
-                  type="button"
-                  onClick={() => setActiveFlavour('vanilla')}
-                  className={`px-3 py-0.5 rounded-full text-[10.5px] font-extrabold transition-all ${
-                    activeFlavour === 'vanilla'
-                      ? 'bg-amber-400 text-slate-950 shadow-md scale-105'
-                      : 'text-slate-300 hover:text-white'
-                  }`}
-                >
-                  Vanilla
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setActiveFlavour('chocolate')}
-                  className={`px-3 py-0.5 rounded-full text-[10.5px] font-extrabold transition-all ${
-                    activeFlavour === 'chocolate'
-                      ? 'bg-amber-700 text-amber-50 shadow-md scale-105'
-                      : 'text-slate-300 hover:text-white'
-                  }`}
-                >
-                  Chocolate
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setActiveFlavour('coffee')}
-                  className={`px-3 py-0.5 rounded-full text-[10.5px] font-extrabold transition-all ${
-                    activeFlavour === 'coffee'
-                      ? 'bg-yellow-700 text-yellow-50 shadow-md scale-105'
-                      : 'text-slate-300 hover:text-white'
-                  }`}
-                >
-                  Coffee
-                </button>
-              </div>
-
-              <div className="absolute -bottom-4 w-44 h-10 bg-amber-500/25 rounded-full blur-xl pointer-events-none" />
-              <GojoCanGraphic flavour={activeFlavour} size="md" />
-              <div className="mt-3 text-center">
-                <span className="text-[11.5px] font-black text-amber-400 tracking-wider uppercase drop-shadow-md">
-                  GOJO — THE MAHARAJA&apos;S DRINK
-                </span>
-              </div>
-            </div>
-
-            {/* Visual 2 & 3: Phone Mockup & Floating QR Card */}
+          {/* Right Column: Premium Visual Composite (Phone Mockup + QR Card) */}
+          <div className="lg:col-span-6 relative flex items-center justify-center pt-4 sm:pt-6">
             <div className="relative shrink-0 flex items-center">
               <GojoMePhoneMockup />
               <div className="hidden sm:block absolute -right-8 bottom-6 z-20">

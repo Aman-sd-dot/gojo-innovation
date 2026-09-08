@@ -29,9 +29,9 @@ export function ProductShowcase() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: 3D Can Graphic + Interactive Flavour Selector */}
           <div className="lg:col-span-5 flex flex-col items-center justify-center text-center space-y-6">
-            <div className="relative p-6 rounded-3xl bg-slate-950/60 border border-slate-800 w-full flex items-center justify-center">
+            <div className="relative p-6 rounded-3xl bg-slate-950/60 border border-slate-800 w-full flex items-center justify-center min-h-[400px]">
               <div className="absolute inset-0 bg-amber-500/5 rounded-3xl blur-xl pointer-events-none" />
-              <GojoCanGraphic flavour={selectedFlavour} size="lg" />
+              <GojoCanGraphic key={selectedFlavour} flavour={selectedFlavour} size="lg" />
             </div>
 
             {/* Flavour Buttons */}
@@ -45,6 +45,7 @@ export function ProductShowcase() {
                   return (
                     <button
                       key={flavour.id}
+                      type="button"
                       onClick={() => setSelectedFlavour(flavour.id as 'vanilla' | 'chocolate' | 'coffee')}
                       className={`p-3 rounded-2xl border text-xs font-bold transition-all flex flex-col items-center gap-1 ${
                         isSelected
