@@ -12,7 +12,7 @@ import { trackEvent } from '@/lib/analytics/tracker';
 
 export function Hero() {
   return (
-    <section className="relative pt-16 pb-12 sm:pt-20 lg:pt-24 lg:pb-20 overflow-hidden">
+    <section className="relative pt-24 pb-12 sm:pt-28 lg:pt-32 lg:pb-20 overflow-hidden">
       {/* Home Page GOJO Tech & Nature Hero Artwork Background */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <Image
