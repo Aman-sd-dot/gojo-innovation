@@ -13,19 +13,30 @@ import { trackEvent } from '@/lib/analytics/tracker';
 export function Hero() {
   return (
     <section className="relative pt-36 pb-12 sm:pt-36 lg:pt-36 lg:pb-20 overflow-hidden">
-      {/* Home Page GOJO Tech & Nature Hero Artwork Background */}
+      {/* Home Page Responsive Hero Artwork Background */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        {/* Mobile Vertical 9:16 Portrait Background */}
         <Image
-          src="/images/home_bg.jpg"
-          alt="GOJO Innovation - Tech, Healthcare & Nutrition"
+          src="/images/home_bg_mobile.jpg"
+          alt="GOJO Innovation Mobile Background"
           fill
           priority
-          sizes="100vw"
-          className="object-cover object-[center_top] sm:object-center opacity-85 sm:opacity-75"
+          sizes="(max-width: 768px) 100vw, 1px"
+          className="md:hidden object-cover object-center opacity-85"
         />
+        {/* Desktop Landscape Background */}
+        <Image
+          src="/images/home_bg.jpg"
+          alt="GOJO Innovation Desktop Background"
+          fill
+          priority
+          sizes="(min-width: 769px) 100vw, 1px"
+          className="hidden md:block object-cover object-center opacity-75"
+        />
+
         {/* Subtle Responsive Gradient Overlays for Vivid Artwork & Crisp Text */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#080C14]/65 via-[#080C14]/40 to-[#080C14]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#080C14]/75 via-[#080C14]/30 to-[#080C14]/55" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#080C14]/65 via-[#080C14]/35 to-[#080C14]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#080C14]/75 via-[#080C14]/25 to-[#080C14]/55" />
       </div>
 
       {/* Vibrant Tech & Nature Ambient Radial Glows */}
