@@ -12,7 +12,7 @@ import { trackEvent } from '@/lib/analytics/tracker';
 
 export function Hero() {
   return (
-    <section className="relative pt-24 pb-12 sm:pt-28 lg:pt-32 lg:pb-20 overflow-hidden">
+    <section className="relative pt-36 pb-12 sm:pt-36 lg:pt-36 lg:pb-20 overflow-hidden">
       {/* Home Page GOJO Tech & Nature Hero Artwork Background */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <Image
@@ -36,7 +36,7 @@ export function Hero() {
         {/* Top Hero Layout: Left Typography & Right Visual Composition */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
           {/* Left Column: Brand Statement & CTAs */}
-          <div className="lg:col-span-6 text-left space-y-4">
+          <div className="lg:col-span-6 text-left space-y-4 pt-2 sm:pt-0">
             {/* Tagline Badge */}
             <div className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[10px] sm:text-xs font-extrabold tracking-wider uppercase">
               <Sparkles className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
