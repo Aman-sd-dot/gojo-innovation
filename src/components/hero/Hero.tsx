@@ -21,11 +21,11 @@ export function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center opacity-30 scale-105"
+          className="object-cover object-center opacity-75"
         />
-        {/* Dark Gradient Overlay & Soft Vignette for Readable Text */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#080C14]/80 via-[#080C14]/65 to-[#080C14]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#080C14]/85 via-transparent to-[#080C14]/85" />
+        {/* Subtle Gradient Overlays for Vivid Artwork & High Text Legibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#080C14]/50 via-[#080C14]/30 to-[#080C14]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#080C14]/65 via-[#080C14]/20 to-[#080C14]/50" />
       </div>
 
       {/* Vibrant Tech & Nature Ambient Radial Glows */}
