@@ -120,6 +120,14 @@ export async function POST(request: Request) {
       );
     }
 
+    // Security: Maximum array length constraint (DoS / CPU starvation prevention)
+    if (items.length > 50) {
+      return NextResponse.json(
+        { error: 'Maximum 50 items allowed per calculation request' },
+        { status: 400 }
+      );
+    }
+
     let totalCalories = 0;
     let totalProtein = 0;
     let totalCalcium = 0;
@@ -166,6 +174,15 @@ export async function POST(request: Request) {
         return NextResponse.json(
           {
             error: `Invalid quantity for item "${trimmedId}". Quantity must be a positive number greater than 0`,
+          },
+          { status: 400 }
+        );
+      }
+
+      if (qty > 1000) {
+        return NextResponse.json(
+          {
+            error: `Invalid quantity for item "${trimmedId}". Maximum quantity allowed per item is 1000`,
           },
           { status: 400 }
         );

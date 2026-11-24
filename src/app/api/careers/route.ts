@@ -115,6 +115,20 @@ export async function POST(request: Request) {
       );
     }
 
+    // Security: Input length boundary enforcement (DoS / memory abuse prevention)
+    if (
+      fullName.trim().length > 100 ||
+      email.trim().length > 254 ||
+      phone.trim().length > 30 ||
+      (coverNote && typeof coverNote === 'string' && coverNote.length > 5000) ||
+      (linkedIn && typeof linkedIn === 'string' && linkedIn.length > 250)
+    ) {
+      return NextResponse.json(
+        { error: 'Input field length exceeds maximum allowed limit' },
+        { status: 400 }
+      );
+    }
+
     console.log('[API /careers] Application received:', {
       jobId,
       jobTitle,

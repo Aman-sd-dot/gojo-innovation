@@ -10,6 +10,7 @@
     "prisma:generate": "prisma generate",
     "test:api": "npx --yes tsx --env-file=.env scripts/test-api-suite.ts",
     "test:integration": "npx --yes tsx --env-file=.env scripts/test-frontend-backend-integration.ts",
+    "test:security": "npx --yes tsx --env-file=.env scripts/security-audit.ts",
     "verify:db": "npx --yes tsx --env-file=.env scripts/verify-db.ts"
   },
   "dependencies": {

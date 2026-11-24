@@ -90,7 +90,7 @@ export async function POST(request: Request) {
     const email = typeof body.email === 'string' ? body.email.trim() : '';
 
     // NL-02 & NL-03: Missing or Invalid email format
-    if (!email || !email.includes('@')) {
+    if (!email || !email.includes('@') || email.length > 254) {
       return NextResponse.json(
         { error: 'Valid email address is required' },
         { status: 400 }

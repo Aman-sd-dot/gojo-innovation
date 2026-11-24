@@ -127,6 +127,21 @@ export async function POST(request: Request) {
       );
     }
 
+    // Security: Input length boundary enforcement (DoS / buffer bloat prevention)
+    if (
+      fullName.length > 100 ||
+      email.length > 254 ||
+      subject.length > 200 ||
+      message.length > 5000 ||
+      (phone && phone.length > 30) ||
+      (organization && organization.length > 150)
+    ) {
+      return NextResponse.json(
+        { success: false, error: 'Input field length exceeds maximum allowed limit' },
+        { status: 400 }
+      );
+    }
+
     // CO-04: Invalid email format
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return NextResponse.json(

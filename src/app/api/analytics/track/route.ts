@@ -105,6 +105,14 @@ export async function POST(request: Request) {
       );
     }
 
+    // Security: Input length boundary
+    if (action.length > 100) {
+      return NextResponse.json(
+        { error: 'Action field exceeds maximum allowed limit of 100 characters' },
+        { status: 400 }
+      );
+    }
+
     // AN-01: Valid analytics event
     if (process.env.NODE_ENV === 'development') {
       console.log('[API /analytics/track] Telemetry Event Ingested:', {
