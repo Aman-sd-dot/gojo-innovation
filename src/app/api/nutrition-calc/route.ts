@@ -1,6 +1,51 @@
 import { NextResponse } from 'next/server';
 import { VERIFIED_NUTRITION_DATABASE } from '@/data/mockData';
 
+const ALLOWED_METHODS = ['GET', 'POST'];
+
+function methodNotAllowed() {
+  return NextResponse.json(
+    {
+      error: 'Method Not Allowed',
+      message: 'Only GET and POST methods are allowed for /api/nutrition-calc',
+      allowed: ALLOWED_METHODS,
+    },
+    {
+      status: 405,
+      headers: {
+        Allow: ALLOWED_METHODS.join(', '),
+      },
+    }
+  );
+}
+
+// NU-12: Explicit 405 handlers with Allow header for all non-GET/POST methods
+export async function PUT() {
+  return methodNotAllowed();
+}
+
+export async function DELETE() {
+  return methodNotAllowed();
+}
+
+export async function PATCH() {
+  return methodNotAllowed();
+}
+
+export async function HEAD() {
+  return methodNotAllowed();
+}
+
+export async function OPTIONS() {
+  return new NextResponse(null, {
+    status: 204,
+    headers: {
+      Allow: 'GET, POST, OPTIONS',
+    },
+  });
+}
+
+// NU-01, NU-02, NU-03: GET handler
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const foodId = searchParams.get('id');
@@ -20,14 +65,57 @@ export async function GET(request: Request) {
   });
 }
 
+// NU-04 to NU-11: POST calculation handler
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
-    const { items } = body; // array of { id, quantity }
+    let body: Record<string, unknown>;
 
-    if (!Array.isArray(items)) {
+    let rawText: string;
+    try {
+      rawText = await request.text();
+    } catch {
+      return NextResponse.json(
+        { error: 'Invalid request body' },
+        { status: 400 }
+      );
+    }
+
+    if (!rawText || !rawText.trim()) {
       return NextResponse.json(
         { error: 'Expected items array for calculation' },
+        { status: 400 }
+      );
+    }
+
+    try {
+      body = JSON.parse(rawText);
+    } catch {
+      return NextResponse.json(
+        { error: 'Invalid JSON body' },
+        { status: 400 }
+      );
+    }
+
+    // NU-08: Missing items field
+    if (
+      !body ||
+      typeof body !== 'object' ||
+      Array.isArray(body) ||
+      !('items' in body) ||
+      !Array.isArray(body.items)
+    ) {
+      return NextResponse.json(
+        { error: 'Expected items array for calculation' },
+        { status: 400 }
+      );
+    }
+
+    const items = body.items as Array<{ id?: string; quantity?: number }>;
+
+    // NU-07: Empty items array
+    if (items.length === 0) {
+      return NextResponse.json(
+        { error: 'Items array cannot be empty' },
         { status: 400 }
       );
     }
@@ -37,15 +125,57 @@ export async function POST(request: Request) {
     let totalCalcium = 0;
     let totalFibre = 0;
 
-    items.forEach(({ id, quantity = 1 }) => {
-      const match = VERIFIED_NUTRITION_DATABASE.find((f) => f.id === id);
-      if (match) {
-        totalCalories += match.calories * quantity;
-        totalProtein += match.proteinGrams * quantity;
-        totalCalcium += match.calciumMg * quantity;
-        totalFibre += match.fibreGrams * quantity;
+    for (const item of items) {
+      if (!item || typeof item !== 'object') {
+        return NextResponse.json(
+          { error: 'Each item in the array must be an object with an id and quantity' },
+          { status: 400 }
+        );
       }
-    });
+
+      const { id, quantity } = item;
+
+      // Validate ID presence
+      if (!id || typeof id !== 'string' || !id.trim()) {
+        return NextResponse.json(
+          { error: 'Item id is required and must be a valid string' },
+          { status: 400 }
+        );
+      }
+
+      const trimmedId = id.trim();
+
+      // NU-09: Invalid item ID
+      const match = VERIFIED_NUTRITION_DATABASE.find((f) => f.id === trimmedId);
+      if (!match) {
+        return NextResponse.json(
+          { error: `Food item not found: ${trimmedId}` },
+          { status: 404 }
+        );
+      }
+
+      // NU-10 & NU-11: Zero or Negative quantity
+      const qty = quantity === undefined ? 1 : quantity;
+
+      if (
+        typeof qty !== 'number' ||
+        isNaN(qty) ||
+        !Number.isFinite(qty) ||
+        qty <= 0
+      ) {
+        return NextResponse.json(
+          {
+            error: `Invalid quantity for item "${trimmedId}". Quantity must be a positive number greater than 0`,
+          },
+          { status: 400 }
+        );
+      }
+
+      totalCalories += match.calories * qty;
+      totalProtein += match.proteinGrams * qty;
+      totalCalcium += match.calciumMg * qty;
+      totalFibre += match.fibreGrams * qty;
+    }
 
     return NextResponse.json({
       success: true,

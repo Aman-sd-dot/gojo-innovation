@@ -1,20 +1,22 @@
 import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, Calendar, Clock, User, Share2, Sparkles } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { SectionContainer } from '@/components/layout/SectionContainer';
 import { Button } from '@/components/ui/Button';
 import { cms } from '@/lib/cms/client';
 import { constructMetadata } from '@/lib/seo/metadata';
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps) {
-  const post = await cms.getBlogPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = await cms.getBlogPostBySlug(slug);
+
   if (!post) return constructMetadata({ title: 'Article Not Found' });
 
   return constructMetadata({
@@ -25,14 +27,15 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = await cms.getBlogPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = await cms.getBlogPostBySlug(slug);
+
   if (!post) notFound();
 
   return (
     <div className="pt-24 pb-16">
       <SectionContainer className="pt-12 pb-16">
         <div className="max-w-4xl mx-auto text-left">
-          {/* Back button */}
           <Link
             href="/blog"
             className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-400 hover:text-white transition-colors mb-8"
@@ -41,7 +44,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <span>Back to Journal</span>
           </Link>
 
-          {/* Article Header */}
           <div className="space-y-4 mb-8">
             <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 inline-block">
               {post.category}
@@ -67,7 +69,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </div>
           </div>
 
-          {/* Article Content Body */}
           <div className="glass-panel p-8 sm:p-12 rounded-3xl border border-slate-800 bg-slate-900/80 text-slate-300 text-base leading-relaxed space-y-6">
             <div className="text-lg text-emerald-300 font-medium italic border-l-4 border-emerald-500 pl-4 py-1">
               &ldquo;{post.excerpt}&rdquo;

@@ -41,3 +41,6 @@ prisma/*.db-journal
 # Powershell wrapper (local only)
 powershell.bat
 powershell.cmd
+
+# Backups
+*.backup

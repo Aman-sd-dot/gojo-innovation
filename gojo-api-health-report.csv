@@ -1,0 +1,8 @@
+"Endpoint","Method","Status","TestsPassed","File"
+"/api/analytics/track","POST","HEALTHY (HTTP 200/400/405 Verified)","5/5","C:\Users\Dell\Desktop\Gojo Innovation\src\app\api\analytics\track\route.ts"
+"/api/careers","POST","HEALTHY (HTTP 200/400/405 Verified)","7/7","C:\Users\Dell\Desktop\Gojo Innovation\src\app\api\careers\route.ts"
+"/api/cms/[type]","GET","HEALTHY (HTTP 200/400/404/405 Verified)","6/6","C:\Users\Dell\Desktop\Gojo Innovation\src\app\api\cms\[type]\route.ts"
+"/api/contact","POST","HEALTHY (HTTP 201/400/405 Verified - Neon DB Connected)","9/9","C:\Users\Dell\Desktop\Gojo Innovation\src\app\api\contact\route.ts"
+"/api/newsletter","POST","HEALTHY (HTTP 200/400/405 Verified)","6/6","C:\Users\Dell\Desktop\Gojo Innovation\src\app\api\newsletter\route.ts"
+"/api/nutrition-calc","GET","HEALTHY (HTTP 200/404 Verified)","3/3","C:\Users\Dell\Desktop\Gojo Innovation\src\app\api\nutrition-calc\route.ts"
+"/api/nutrition-calc","POST","HEALTHY (HTTP 200/400/404/405 Verified)","9/9","C:\Users\Dell\Desktop\Gojo Innovation\src\app\api\nutrition-calc\route.ts"

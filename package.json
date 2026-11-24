@@ -7,14 +7,17 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prisma:generate": "prisma generate"
+    "prisma:generate": "prisma generate",
+    "test:api": "npx --yes tsx --env-file=.env scripts/test-api-suite.ts",
+    "test:integration": "npx --yes tsx --env-file=.env scripts/test-frontend-backend-integration.ts",
+    "verify:db": "npx --yes tsx --env-file=.env scripts/verify-db.ts"
   },
   "dependencies": {
     "@prisma/client": "^5.19.1",
     "clsx": "^2.1.1",
     "framer-motion": "^11.5.4",
     "lucide-react": "^0.439.0",
-    "next": "^14.2.25",
+    "next": "15.5.29",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tailwind-merge": "^2.5.2"
@@ -28,5 +31,9 @@
     "prisma": "^5.19.1",
     "tailwindcss": "^3.4.11",
     "typescript": "^5.6.2"
+  },
+  "overrides": {
+    "next": {},
+    "postcss": "$postcss"
   }
 }
